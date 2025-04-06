@@ -1,0 +1,39 @@
+.col {
+    background-color: aqua;
+    border-style: solid;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.child {
+    width: 30%;
+    justify-content: center;
+}
+
+.silang{
+    background-image: url("silang.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    
+}
+
+.lingkaran{
+    background-image: url("lingkaran.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 80%;
+}
