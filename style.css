@@ -18,7 +18,8 @@ h1{
 }
 
 .child {
-    width: 30%;
+    width: 50vh;
+    margin: 20px;
     justify-content: center;
 }
 

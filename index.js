@@ -76,6 +76,13 @@ function main(x, y){
             document.getElementById(idFade).classList.add("bg-danger")
             // document.getElementById(idFade2).style.opacity = "0.5"
             document.getElementById(idFade2).classList.add("bg-warning")
+        }else if(dataSilang.length === 1){
+            dataSilang.push(idTarget)
+            if(winning()){
+                return
+            }
+            let idFade = dataSilang[0]
+            document.getElementById(idFade).classList.add("bg-warning")
         }else{
             dataSilang.push(idTarget)
             if(winning()){
@@ -112,6 +119,13 @@ function main(x, y){
             document.getElementById(idFade).classList.add("bg-danger")
             // document.getElementById(idFade2).style.opacity = "0.5"
             document.getElementById(idFade2).classList.add("bg-warning")
+        }else if(dataLingkaran.length === 1){
+            dataLingkaran.push(idTarget)
+            if(winning()){
+                return
+            }
+            let idFade = dataLingkaran[0]
+            document.getElementById(idFade).classList.add("bg-warning")
         }else{
             dataLingkaran.push(idTarget)
             if(winning()){
