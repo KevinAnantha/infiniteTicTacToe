@@ -41,7 +41,10 @@
             <label for="timer_value">Use timer</label>
             <input class="form-control" type="number" name="" id="timer_value" placeholder="input timer (second)">
             <br>
-            <button class="btn btn-primary" id="timer_mode" onclick="set_timer()">set timer</button>
+            <div class="container_button">
+                <button class="btn btn-primary mr-2" id="timer_mode" onclick="set_timer()">set timer</button>
+                <button class="btn btn-warning mx-2" onclick="refresh()">Reset</button>
+            </div>
         
         </div>    
     </div>

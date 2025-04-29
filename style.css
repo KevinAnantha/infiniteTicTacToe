@@ -21,6 +21,12 @@ h2{
     justify-content: center;
 }
 
+.container_button{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
 
 .parent {
     display: flex;
