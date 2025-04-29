@@ -2,11 +2,22 @@ let turn = "silang"
 let dataLingkaran = []
 let dataSilang = []
 let win = false
-// let timer = 5;
+let timer_status = false
+let countdown;  
+let timer_value;
 
 document.getElementById('turn').innerText = `Giliran : ${turn}`
 
 function main(x, y){
+
+    if(timer_status){
+        if(countdown){
+            clearInterval(countdown);
+        }    
+
+    }
+
+    let timer = timer_value;
 
     if(win){
         return
@@ -135,25 +146,32 @@ function main(x, y){
 
     }
 
+    if(timer_status){
+        countdown = setInterval(()=>{
+            document.getElementById("timer").innerText = `timer : ${timer}`;
+    
+            if(timer <= 0){
+                clearInterval(countdown);
+                timeout_winning();
+            }    
 
+            timer--;
 
-    // let countdown = setInterval(()=>{
-    //     timer--;
-    //     document.getElementById("timer").innerText = timer;
-
-    //     if(timer <= 0){
-    //         clearInterval(countdown);
-    //         win = true;
-    //         winning();
-    //     }
-
-    // },1000)
+        },1000)
+    
+    }
 
     turn = turn == "silang" ? "lingkaran" : "silang"
 
     document.getElementById('turn').innerText = `Giliran : ${turn}`
 
 
+}
+
+function set_timer(){
+    timer_value = document.getElementById("timer_value").value;   
+    document.getElementById("timer").innerText = `Timer value : ${timer_value}s`
+    timer_status = true;
 }
 
 function winning(){
@@ -198,7 +216,34 @@ function winning(){
 
         let winning = document.getElementById("turn")
         winning.innerHTML = `Winner : ${turn}`
+        document.getElementById("timer").innerText = "";
         return true
     }
 }
 
+function timeout_winning(){
+
+    let prevTurn = turn == "silang" ? "lingkaran" : "silang";
+
+    if(turn === "silang"){
+        dataLingkaran.forEach(element =>{
+            let line = document.getElementById(element).classList
+            line.remove("bg-warning")
+            line.remove("bg-danger")
+            line.add("bg-success")
+        })
+    }else{
+        dataSilang.forEach(element =>{
+            let line = document.getElementById(element).classList
+            line.remove("bg-warning")
+            line.remove("bg-danger")
+            line.add("bg-success")
+        })
+    }
+
+    let winning = document.getElementById("turn")
+    winning.innerHTML = `Winner : ${prevTurn}`
+    document.getElementById("timer").innerText = "";
+    return true
+
+}
