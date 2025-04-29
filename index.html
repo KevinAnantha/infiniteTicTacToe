@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <h1>Infinite TicTacToe</h1>
+    <h1 class="mt-4">Infinite TicTacToe</h1>
 
     <div class="parent">
         <div class="child">
@@ -34,7 +34,9 @@
                 
             </div>    
 
-            <br>
+            <div id="reset" class="container_reset" hidden>
+                <button onclick="refresh()" id="refresh" class="btn btn-success mt-4 mb-4">Play Again</button>
+            </div>
             <br>
             <label for="timer_value">Use timer</label>
             <input class="form-control" type="number" name="" id="timer_value" placeholder="input timer (second)">

@@ -11,10 +11,20 @@ h1{
     text-align: center;
 }
 
+h2{
+    text-align: center;
+}
+
+.container_reset{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
 .parent {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
 }
 
 .child {

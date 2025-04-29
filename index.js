@@ -217,6 +217,7 @@ function winning(){
         let winning = document.getElementById("turn")
         winning.innerHTML = `Winner : ${turn}`
         document.getElementById("timer").innerText = "";
+        document.getElementById("reset").hidden = false
         return true
     }
 }
@@ -244,6 +245,11 @@ function timeout_winning(){
     let winning = document.getElementById("turn")
     winning.innerHTML = `Winner : ${prevTurn}`
     document.getElementById("timer").innerText = "";
+    document.getElementById("reset").hidden = false
     return true
 
+}
+
+function refresh(){
+    location.reload();
 }
